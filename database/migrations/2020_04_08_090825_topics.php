@@ -16,6 +16,7 @@ class Topics extends Migration
         schema::create('topics', function (Blueprint $table) {
             $table->bigInteger('topic_id')->unsigned();
             $table->string('topic_name');
+            $table->timestamps();
         });
     }
 

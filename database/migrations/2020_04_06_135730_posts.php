@@ -18,7 +18,6 @@ class Posts extends Migration
             $table->bigInteger('author_id')->unsigned();
             $table->bigInteger('topic_id')->unsigned();
             $table->string('title');
-            $table->string('description');
             $table->longText('content');
             $table->timestamps();
         });

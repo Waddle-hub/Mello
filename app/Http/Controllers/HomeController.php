@@ -6,6 +6,11 @@ class HomeController extends Controller
 {
     function index()
     {
-        return view("Layout.Master");
+        $posts = Post::all();
+
+        return view("Layout.Master")
+            ->with([
+                'posts' => $posts
+            ]);
     }
 }

@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', "HomeController@index")->name('Layout.Master');
+Route::get('/home', "HomeController@index")->name('Layout.Master');
+
+Route::group(['middleware' => 'auth'], function() {
+
+    Route::get('/publish', 'PostController@create')->name('Posts.makepost');
+    Route::post('/publish', 'PostController@store');
+});
+
+Route::get('/post/{post}', 'PostController@show')->name('post.show');
 
 Auth::routes();

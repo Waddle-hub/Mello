@@ -9,9 +9,10 @@ use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
+
     public function create()
     {
-        $topics = Topic::all();
+        $topics = Topic::orderBy('title', 'asc')->get();
 
         return view('Posts.makepost')
             ->with([
@@ -27,5 +28,9 @@ class PostController extends Controller
 
         return redirect()
             ->route('post.show', ['post' => $post]);
+    }
+
+    public function show(Post $post){
+        return view('post.show')->with(compact('post'));
     }
 }

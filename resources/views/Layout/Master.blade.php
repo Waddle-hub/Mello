@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Int~Gag</title>
+    <title>Mello</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
@@ -12,7 +12,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Int ~ Gag</a>
+    <a class="navbar-brand" href="#">Mello</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{{route("INT-GAG")}}">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{route("/")}}">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Premium</a>
@@ -38,7 +38,6 @@
             <a class="dropdown-item" href="#">Memes</a>
             <a class="dropdown-item" href="#">Anime</a>
             <a class="dropdown-item" href="#">Funny</a>
-            <a class="dropdown-item" href="#"></a>
           </div>
         </li>
       </ul>
@@ -46,8 +45,8 @@
 
       <form class="form-inline my-2 my-lg-0" action="{{route('login')}}" method="POST">
         @csrf
-        <input class="form-control mr-sm-2" type="search" placeholder="Password" name="Password" value="{{old('Password')}}" aria-label="LoginPwd">
-        <input class="form-control mr-sm-2" type="search" placeholder="Username" name="Username" value="{{old('Username')}}" aria-label="Username">
+        <input class="form-control mr-sm-2" type="search" placeholder="Password" name="password" value="{{old('password')}}" aria-label="LoginPwd">
+        <input class="form-control mr-sm-2" type="search" placeholder="Username" name="username" value="{{old('username')}}" aria-label="Username">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
       </form>
 
