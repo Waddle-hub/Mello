@@ -13,10 +13,10 @@ class Topics extends Migration
      */
     public function up()
     {
-        schema::create('topics', , function (Blueprint $table) {
+        schema::create('topics', function (Blueprint $table) {
             $table->bigInteger('topic_id')->unsigned();
             $table->string('topic_name');
-        }
+        });
     }
 
     /**
