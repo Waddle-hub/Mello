@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-     return view('welcome');
-     
-});
+Route::get('/', "HomeController@index")->name('Layout.Master');
+
+Auth::routes();

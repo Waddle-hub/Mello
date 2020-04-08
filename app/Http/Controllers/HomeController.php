@@ -6,6 +6,6 @@ class HomeController extends Controller
 {
     function index()
     {
-        return view("Main.Home");
+        return view("Layout.Master");
     }
 }
