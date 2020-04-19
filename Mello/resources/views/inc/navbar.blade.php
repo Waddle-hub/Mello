@@ -13,11 +13,20 @@
             <a class="nav-link" href="/about">About</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown04">
-            <a class="dropdown-item" href="/about">About</a>
-            <a class="dropdown-item" href="/services">Services</a>
-          </div>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Newbies</a>
+              <a class="dropdown-item" href="#">Getting warmer</a>
+              <a class="dropdown-item" href="#">Hottest</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Animals</a>
+              <a class="dropdown-item" href="#">Memes</a>
+              <a class="dropdown-item" href="#">Anime</a>
+              <a class="dropdown-item" href="#">Funny</a>
+              <a class="dropdown-item" href="#"></a>
+            </div>
         </li>
       </ul>
       <form class="form-inline my-2 my-md-0">
