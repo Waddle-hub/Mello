@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
+});
+
+//route to about page
+Route::get('/about', function(){
+    return view('pages.about');
+});
+
+// dynamic urls users/22/Brad for example
+Route::get('/users/{id}/{name}', function($id, $name){
+    return 'This is user '.$name. ' with an id of '.$id; 
 });
