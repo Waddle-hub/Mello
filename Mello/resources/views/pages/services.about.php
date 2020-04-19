@@ -8,7 +8,7 @@
 
     </head>
     <body>
-        <h1>Welcome</h1>
-        <p>I am making a laravel applciation </p>
+        <h1>Services</h1>
+        <p>this is the services page</p>
     </body>
 </html>
