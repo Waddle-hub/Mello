@@ -14,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
 
-//route to about page
-Route::get('/about', function(){
-    return view('pages.about');
-});
 
 // dynamic urls users/22/Brad for example
 Route::get('/users/{id}/{name}', function($id, $name){
