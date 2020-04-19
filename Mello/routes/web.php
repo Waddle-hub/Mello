@@ -17,8 +17,3 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
 
-
-// dynamic urls users/22/Brad for example
-Route::get('/users/{id}/{name}', function($id, $name){
-    return 'This is user '.$name. ' with an id of '.$id; 
-});
