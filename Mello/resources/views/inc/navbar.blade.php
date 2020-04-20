@@ -32,8 +32,10 @@
             </div>
         </li>
       </ul>
-      <form class="form-inline my-2 my-md-0">
-        <input class="form-control" type="text" placeholder="Search">
-      </form>
+      <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="btn btn-success" href="/posts/create">Create a Post !</a>
+          </li>
+      </ul>
     </div>
   </nav>

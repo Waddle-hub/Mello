@@ -41,7 +41,14 @@ class PostsController extends Controller
             'title' => 'required',
             'Body' => 'required'
         ]);
-        return 123;
+        //Create Post
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->Body = $request->input('Body');
+        $post->save();
+        
+        //Here we are using the messages file success message !
+        return redirect('/posts')->with('success', 'Post Created');
     }
 
     /**
