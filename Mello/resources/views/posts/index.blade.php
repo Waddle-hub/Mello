@@ -5,7 +5,8 @@
     @if(count($posts) > 1)
         @foreach ($posts as $post)
             <div class="well">
-                <h3>{{$post->title}}</h3>
+            <h3 class="list-group-item"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
+                <small>Made on {{$post->created_at}}</small>
             </div>
         @endforeach
     @else 
