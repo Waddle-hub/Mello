@@ -34,7 +34,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <li>
-            <a class="btn btn-success" href="/posts/create">Create a Post !</a>
+            <a class="btn btn-outline-success" href="/posts/create">Create a Post !</a>
           </li>
       </ul>
     </div>

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/posts" class="btn btn-default">Go back</a>
     <h1>{{$post->title}}</h1>
     <div>
         {!!$post->Body!!}
@@ -9,8 +8,13 @@
     <hr>
     <small>Written on {{$post->created_at}}</small>
     <hr>
-    <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
-    <form method="" action=""  >
 
+    <a href="/posts" class="btn btn-outline-dark">Go back</a>
+    
+    <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-primary">Edit</a>
+
+    <form method="post" action="{{action('PostsController@destroy', $post->id)}}">
+        <input type="hidden" name="_method" value="DELETE"/>
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
     </form>
 @endsection

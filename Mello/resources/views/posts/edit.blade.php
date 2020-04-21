@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="detail">Body</label>
-            <textarea  class="form-control" name="Body" placeholder="Body Text" rows="10">{{$post->Body}}</textarea>
+            <textarea  class="form-control" name="Body" placeholder="Body Text">{{$post->Body}}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
