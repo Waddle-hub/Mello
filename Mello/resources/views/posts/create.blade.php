@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <h1>Create Posts !</h1>
 
     <form method="post" action="{{ route('posts.store') }}">
@@ -16,4 +17,5 @@
 
         <button type="submit" class="btn btn-primary">Create Post</button>
  </form>
+
 @endsection
