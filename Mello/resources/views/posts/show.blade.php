@@ -10,4 +10,7 @@
     <small>Written on {{$post->created_at}}</small>
     <hr>
     <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
+    <form method="" action=""  >
+
+    </form>
 @endsection
