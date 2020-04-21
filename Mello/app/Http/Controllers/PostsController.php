@@ -48,7 +48,7 @@ class PostsController extends Controller
         $post->save();
         
         //Here we are using the messages file success message !
-        return redirect('/posts')->with('success', 'Post Created');
+        return redirect()->route('posts.show', ['post' => $post->id])->with('success', 'Post created!');
     }
 
     /**
@@ -84,7 +84,18 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'Body' => 'required'
+        ]);
+        //Find Post
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->Body = $request->input('Body');
+        $post->save();
+        
+        //Here we are using the messages file success message !
+        return redirect()->route('posts.show', ['post' => $id])->with('success', 'Post updated!');
     }
 
     /**
