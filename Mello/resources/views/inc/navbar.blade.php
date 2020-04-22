@@ -15,27 +15,30 @@
         <li class="nav-item">
           <a class="nav-link" href="/posts">The Stream</a>
       </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Newbies</a>
-              <a class="dropdown-item" href="#">Getting warmer</a>
-              <a class="dropdown-item" href="#">Hottest</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Animals</a>
-              <a class="dropdown-item" href="#">Memes</a>
-              <a class="dropdown-item" href="#">Anime</a>
-              <a class="dropdown-item" href="#">Funny</a>
-              <a class="dropdown-item" href="#"></a>
-            </div>
-        </li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
+        @if(Auth::guest())
+          <li><a href="{{ route('login')}}" class="btn btn-outline-primary">Login</a></li>
+          <li><a href="{{ route('register')}}" class="btn btn-outline-primary">Register</a></li>
+        @else 
           <li>
             <a class="btn btn-outline-success" href="/posts/create">Create a Post !</a>
           </li>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <form action="{{ route('logout')}}" method="get">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-danger">Logout</button> 
+                  </form>
+                </li>
+            </ul>
+          </li>
+        @endif
       </ul>
     </div>
   </nav>
