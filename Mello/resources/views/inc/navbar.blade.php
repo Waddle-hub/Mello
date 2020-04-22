@@ -19,8 +19,11 @@
 
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::guest())
-          <li class="nav-item"><a href="{{ route('login')}}" class="btn btn-outline-primary">Login</a></li>
-          <li class="nav-item"><a href="{{ route('register')}}" class="btn btn-outline-primary">Register</a></li>
+        <div class="container"> </div>
+          <li class="nav-item">
+            <div class="container"> <a href="{{ route('login')}}" class="btn btn-outline-primary">Login</a></div>
+          </li>
+          <li class="nav-item"><div class="container"><a href="{{ route('register')}}" class="btn btn-outline-primary">Register</a></div></li>
         @else 
           
           <li class="nav-item">
@@ -28,25 +31,19 @@
               <a class="btn btn-outline-success" href="/posts/create">Create a Post !</a>
             </div>
           </li>
-
-          <li class="dropdown">
-            <div class="container">
-              <a href="#" class="dropdown-toggle btn btn-outline-primary" data-toggle="dropdown" role="menu">
+          <li>
+            <form action="{{ route('logout')}}" method="post">
+              @csrf
+              <button type="submit" class="btn btn-outline-danger">Logout</button> 
+            </form>
+          </li>
+          <li>
+            <div class="container"?>
+              <a href="#" class="btn btn-outline-primary">
                 {{ Auth::user()->name }} <span class="caret"></span>
               </a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-
-                  <form action="{{ route('logout')}}" method="get">
-                    @csrf
-                    <button type="submit" class="btn btn-outline-danger">Logout</button> 
-                  </form>
-
-                </li>
-              </ul>
             </div>
           </li>
-
         @endif
       </ul>
     </div>

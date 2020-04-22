@@ -5,8 +5,6 @@
     <h1>{{$title}}</h1>
     <p>I am making a laravel applciation </p>
     <p>
-        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
-        <a class="btn btn-success btn-lg" href="/register" role="button">Register</a>
     </p>
 </div>
 @endsection
