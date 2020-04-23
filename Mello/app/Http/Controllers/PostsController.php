@@ -47,11 +47,30 @@ class PostsController extends Controller
             'Body' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]);
+
+        if($request->hasFile('cover_image')){
+            //get filename with extentsion
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalImage();
+            //get just the filename 
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //get just the extentsion
+            $extension = $request->file('cover_image')->getOriginalClientExtension();
+            //filename yo store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+
+        }else{
+
+            $fileNameToStore = 'noImage.jpg';
+
+        }
         //Create Post
         $post = new Post;
         $post->title = $request->input('title');
         $post->Body = $request->input('Body');
         $post->user_id = auth()->user()->id;
+        $post->cover_image = $fileNameToStore;
         $post->save(); 
         
         //Here we are using the messages file success message !
