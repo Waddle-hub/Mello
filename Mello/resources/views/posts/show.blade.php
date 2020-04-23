@@ -10,12 +10,15 @@
     <hr>
 
     <a href="/posts" class="btn btn-outline-dark">Go back</a>
-    
-    <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-primary">Edit</a>
+    @if(!Auth::guest())
+        @if(Auth::user()->id == $post->user_id)
+            <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-primary">Edit</a>
 
-    <form method="post" action="{{action('PostsController@destroy', $post->id)}}" class="float-right">
-        @csrf
-        <input type="hidden" name="_method" value="DELETE"/>
-        <button type="submit" class="btn btn-outline-danger">Delete</button>
-    </form>
+            <form method="post" action="{{action('PostsController@destroy', $post->id)}}" class="float-right">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE"/>
+                <button type="submit" class="btn btn-outline-danger">Delete</button>
+            </form>
+        @endif
+    @endif
 @endsection
