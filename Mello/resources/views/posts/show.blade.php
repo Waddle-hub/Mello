@@ -2,6 +2,8 @@
 
 @section('content')
     <h1>{{$post->title}}</h1>
+    <img style="width:50%" src="/storage/cover_images/{{$post->cover_image}}">
+    <br><br>
     <div>
         {!!$post->Body!!}
     </div>
