@@ -15,6 +15,7 @@
             </div>
 
             <h5 class="card-title">Your posts</h5>
+            @if(count($posts) > 0)
             <table  class="table table-striped table-dark">
                 <tr>
                     <th>Title</th>
@@ -37,7 +38,9 @@
                     </tr>
                 @endforeach
             </table>
-            
+            @else
+                <p>You have no posts</p>
+            @endif
         </div>
       </div>
 </div>
