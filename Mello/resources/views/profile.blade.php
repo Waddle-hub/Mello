@@ -15,6 +15,29 @@
             </div>
 
             <h5 class="card-title">Your posts</h5>
+            <table  class="table table-striped table-dark">
+                <tr>
+                    <th>Title</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                @foreach($posts as $post)
+                    <tr>
+                        <th>{{$post->title}}</th>
+                        <th>
+                            <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-success">Edit</a>
+                            <form method="post" action="{{action('PostsController@destroy', $post->id)}}" class="float-right">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE"/>
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                @endforeach
+            </table>
+            
         </div>
       </div>
 </div>
