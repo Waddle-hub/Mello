@@ -50,11 +50,11 @@ class PostsController extends Controller
 
         if($request->hasFile('cover_image')){
             //get filename with extentsion
-            $filenameWithExt = $request->file('cover_image')->getClientOriginalImage();
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
             //get just the filename 
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             //get just the extentsion
-            $extension = $request->file('cover_image')->getOriginalClientExtension();
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
             //filename yo store
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             //upload image
@@ -116,7 +116,8 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'Body' => 'required'
+            'Body' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
         //Find Post
         $post = Post::find($id);
