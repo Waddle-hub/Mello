@@ -63,7 +63,7 @@ class PostsController extends Controller
 
         }else{
 
-            $fileNameToStore = 'noImage.jpg';
+            $fileNameToStore = 'noimage.png';
 
         }
         //Create Post
@@ -161,7 +161,7 @@ class PostsController extends Controller
         if(auth()->user()->id !== $post->user_id){
             return redirect('/posts')->with('error', 'Unauthorised Page');
         }
-        if($post->cover_image != 'noimage.jpg'){
+        if($post->cover_image != 'noimage.png'){
             Storage::delete('public/cover_images/'.$post->cover_image);
         }
         $post->delete();
