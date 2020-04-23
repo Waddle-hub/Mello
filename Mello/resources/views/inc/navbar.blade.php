@@ -39,7 +39,7 @@
           </li>
           <li>
             <div class="container"?>
-              <a href="#" class="btn btn-outline-primary">
+              <a href="{{route('profile')}}" class="btn btn-outline-primary">
                 {{ Auth::user()->name }}
               </a>
             </div>
