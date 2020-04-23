@@ -2,18 +2,20 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Profile</div>
-
-                    <div class="panel-body">
-                        You have been logged in successfully !
-                    </div>
-                </div>
+<div class="container">
+    <div class="card">
+        <h5 class="card-header">Profile</h5>
+        <div class="card-body">
+            <div class="container">
+              <h5 class="card-title">Welcome {{Auth::user()->name}}</h5>
+              <p class="card-text">Lets create some magical posts for your people to enjoy</p>
+              <a href="/posts/create" class="btn btn-outline-primary">Create Posts</a>
             </div>
+            
+            <h5 class="card-title">Your posts</h5>
         </div>
-    </div>
-    
+      </div>
+</div>
+
+
 @endsection
