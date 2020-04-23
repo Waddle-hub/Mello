@@ -12,14 +12,10 @@
 
     </head>
     <body>
-     
         @include('inc.navbar')
         <div class="container">
             @include('inc.messages')
-            <div class="container">
-                @yield('content')
-            </div>
+            @yield('content')
         </div>
-         
     </body>
 </html>

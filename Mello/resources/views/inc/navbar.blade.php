@@ -40,7 +40,7 @@
           <li>
             <div class="container"?>
               <a href="#" class="btn btn-outline-primary">
-                {{ Auth::user()->name }} <span class="caret"></span>
+                {{ Auth::user()->name }}
               </a>
             </div>
           </li>
