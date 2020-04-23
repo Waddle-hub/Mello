@@ -45,7 +45,8 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->Body = $request->input('Body');
-        $post->save();
+        $post->user_id = auth()->user()->id;
+        $post->save(); 
         
         //Here we are using the messages file success message !
         return redirect()->route('posts.show', ['post' => $post->id])->with('success', 'Post created!');
