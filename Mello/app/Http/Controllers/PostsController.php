@@ -44,7 +44,8 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'Body' => 'required'
+            'Body' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
         //Create Post
         $post = new Post;
@@ -117,6 +118,9 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        if(auth()->user()->id !== $post->user_id){
+            return redirect('/posts')->with('error', 'Unauthorised Page');
+        }
         $post->delete();
         return redirect('/posts')->with('success', 'Post Removed !');
     }
