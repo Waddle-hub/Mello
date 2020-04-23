@@ -6,7 +6,7 @@
         {!!$post->Body!!}
     </div>
     <hr>
-    <small>Written on {{$post->created_at}}</small>
+    <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
     <hr>
 
     <a href="/posts" class="btn btn-outline-dark">Go back</a>
