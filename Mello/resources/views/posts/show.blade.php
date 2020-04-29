@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container" >
+    <br>
+    <br>
     <h1>{{$post->title}}</h1>
     <img style="width:50%" src="/storage/cover_images/{{$post->cover_image}}">
     <br><br>
@@ -23,4 +26,7 @@
             </form>
         @endif
     @endif
+    <br>
+    <br>
+</div>
 @endsection
