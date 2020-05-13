@@ -11,22 +11,33 @@
         {!!$post->Body!!}
     </div>
     <hr>
+
+    @if(!Auth::guest())
+      <form method="POST" class="pull-left form-inline" action="{{action('LikeController@like', $post->id, Auth::user()->id)}}">
+          @csrf
+          <div class="form-group mb-2">
+              <button type="submit" class="btn btn-outline-info">Like</button>
+          </div>
+      </form>
+ 
+      <form method="POST" class="float-right" action="{{action('LikeController@dislike', $post->id, Auth::user()->id)}}">
+          @csrf
+          <div class="form-group mb-2">
+              <button type="submit" class="btn btn-outline-warning">Dislike</button>
+          </div>
+      </form>
+    @endif
+
     <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
     <hr>
 
-    <a href="/posts" class="btn btn-outline-dark">Go back</a>
-    @if(!Auth::guest())
-    
-            <form method="POST" class="form-inline" action="{{action('LikeController@like', $post->id, Auth::user()->id)}}">
-                @csrf
-                <button type="submit" class="btn btn-outline-info">Like</button>
-            </form>>
-         
-            <form method="POST" class="form-inline" action="{{action('LikeController@dislike', $post->id, Auth::user()->id)}}">
-                @csrf
-                <button type="submit" class="btn btn-outline-warning">Dislike</button>
-            </form>
-       
+    <div class="container">
+        <div class="form-group mb-2">
+            <a href="/posts" class="btn btn-outline-dark">Go back</a>
+        </div>
+    </div>
+
+    @if(!Auth::guest())   
         @if(Auth::user()->id == $post->user_id)
             <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-primary">Edit</a>
 

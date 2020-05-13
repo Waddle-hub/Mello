@@ -18,7 +18,10 @@
     <body>
         @include('inc.navbar')
         <div class="container">
-            @include('inc.messages')
+            <div class="form-inline md-2">
+                @include('inc.messages')
+            </div>
+            
             @yield('content')
         </div>
     </body>
