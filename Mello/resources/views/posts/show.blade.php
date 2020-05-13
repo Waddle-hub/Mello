@@ -16,6 +16,11 @@
 
     <a href="/posts" class="btn btn-outline-dark">Go back</a>
     @if(!Auth::guest())
+
+        <a href="#" class="btn btn-outline-info">Like</a>
+            
+        <a href="#" class="btn btn-outline-warning">Dislike</a>
+        
         @if(Auth::user()->id == $post->user_id)
             <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-primary">Edit</a>
 
