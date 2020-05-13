@@ -19,8 +19,8 @@ Route::get('/services', 'PagesController@services');
 
 Route::resource('posts', 'PostsController');
 //Route::resource('like', 'LikeController');
-Route::post('posts/', 'LikeController@like');
-Route::post('posts/{post}', 'LikeController@dislike');
+Route::post('posts/{post}/{user}', 'LikeController@like');
+Route::post('posts/{post}/{user}', 'LikeController@dislike');
 Auth::routes();
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
