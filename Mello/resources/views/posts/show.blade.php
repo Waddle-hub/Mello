@@ -16,11 +16,14 @@
 
     <a href="/posts" class="btn btn-outline-dark">Go back</a>
     @if(!Auth::guest())
+    
         <form method="POST" action="{{action('LikeController@like', $post->id, Auth::user()->id)}}">
             <button type="submit" class="btn btn-outline-info">Like</button>
         </form>>
-            
-        <a href="#" class="btn btn-outline-warning">Dislike</a>
+
+        <form method="POST" action="{{action('LikeController@dislike', $post->id, Auth::user()->id)}}">
+            <button type="submit" class="btn btn-outline-warning">Dislike</button>
+        </form>
 
         @if(Auth::user()->id == $post->user_id)
             <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-primary">Edit</a>
